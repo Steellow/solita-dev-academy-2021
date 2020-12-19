@@ -31,6 +31,11 @@ $("#name").click(function() {
     printNames()
 })
 
+$("#amount").click(function() {
+    sortAmount()
+    printNames()
+})
+
 function sortAlphabetical() {
     names.sort(function(a, b) {
         if (a.name < b.name) return -1
@@ -43,6 +48,22 @@ function sortReverseAlphabetical() {
     names.sort(function(a, b) {
         if (a.name < b.name) return 1
         if (a.name > b.name) return -1
+        return 0
+    })
+}
+
+function sortAmount() {
+    names.sort(function(a, b) {
+        if (a.amount < b.amount) return -1
+        if (a.amount > b.amount) return 1
+        return 0
+    })
+}
+
+function sortReverseAmount() {
+    names.sort(function(a, b) {
+        if (a.amount < b.amount) return 1
+        if (a.amount > b.amount) return -1
         return 0
     })
 }
