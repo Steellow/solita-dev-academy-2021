@@ -3,6 +3,7 @@ var names;
 $(document).ready(function() {
     $.getJSON('names.json').then(function(data) {
         names = data.names
+        console.log(typeof names);
         printNames()
         calculateTotal()
     })
@@ -12,7 +13,7 @@ function printNames() {
     $("tbody").html("")
 
     names.forEach(person => {
-        $("tbody").after('<tr><td>' + person.name + '</td><td>' + person.amount + '</td></tr>')
+        $("tbody").append('<tr><td>' + person.name + '</td><td>' + person.amount + '</td></tr>')
     });
 }
 
@@ -23,4 +24,17 @@ function calculateTotal() {
     });
 
     $("#total").html(total)
+}
+
+$("#name").click(function() {
+    sortAlphabetical()
+    printNames()
+})
+
+function sortAlphabetical(a, b) {
+    names.sort(function(a, b) {
+        if (a.name < b.name) return -1
+        if (a.name > b.name) return 1
+        return 0
+    })
 }
