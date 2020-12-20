@@ -5,28 +5,38 @@ body {
 
 /* Table styling */
 
-table {
-    border-collapse: collapse;
-}
-
 td,
 th {
-    border: 1px solid #999;
-    padding: 0.5rem;
-    text-align: left;
+    padding: 0.5em;
+    transition: 0.1s ease;
 }
 
 th {
-    background-color: crimson;
-    color: white;
+    background-color: #E19A94;
 }
 
-td:nth-child(2),
-th:nth-child(2) {
-    text-align: center;
+thead th:hover {
+    background-color: #CA5045;
+    /* Header row works as buttons, so text selection cursor was annoying. https://stackoverflow.com/q/826782 */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-th:first-child,
-td:first-child {
+tr:nth-child(even) {
+    background-color: #F7E5E3;
+}
+
+td:first-child,
+th:first-child {
+    text-align: left;
     min-width: 100px;
+}
+
+td:last-child,
+th:last-child {
+    text-align: right;
 }
