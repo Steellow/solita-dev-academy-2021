@@ -1,5 +1,6 @@
 var names;
 
+// Keeps track whether table should be sorted ascending or descending, when clicking header
 var sortedWithName = false
 var sortedWithAmount = false
 
@@ -29,12 +30,26 @@ function calculateTotal() {
 }
 
 $("#name").click(function() {
-    sortNameAsc()
+    sortedWithAmount = false
+
+    if (sortedWithName) {
+        sortNameDesc()
+    } else {
+        sortNameAsc()
+    }
+
     printNames()
 })
 
 $("#amount").click(function() {
-    sortAmountAsc()
+    sortedWithName = false
+
+    if (sortedWithAmount) {
+        sortAmountDesc()
+    } else {
+        sortAmountAsc()
+    }
+
     printNames()
 })
 
@@ -44,6 +59,7 @@ function sortNameAsc() {
         if (a.name > b.name) return 1
         return 0
     })
+    sortedWithName = true
 }
 
 function sortNameDesc() {
@@ -52,6 +68,7 @@ function sortNameDesc() {
         if (a.name > b.name) return -1
         return 0
     })
+    sortedWithName = false
 }
 
 function sortAmountAsc() {
@@ -60,6 +77,8 @@ function sortAmountAsc() {
         if (a.amount > b.amount) return 1
         return 0
     })
+
+    sortedWithAmount = true
 }
 
 function sortAmountDesc() {
@@ -68,4 +87,6 @@ function sortAmountDesc() {
         if (a.amount > b.amount) return -1
         return 0
     })
+
+    sortedWithAmount = false
 }
