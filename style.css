@@ -40,3 +40,11 @@ td:last-child,
 th:last-child {
     text-align: right;
 }
+
+
+/* Seach box styling */
+
+input {
+    padding: 0.5em;
+    margin: 0.5em;
+}
