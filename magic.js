@@ -1,5 +1,8 @@
 var names;
 
+var sortedWithName = false
+var sortedWithAmount = false
+
 $(document).ready(function() {
     $.getJSON('names.json').then(function(data) {
         names = data.names
@@ -26,16 +29,16 @@ function calculateTotal() {
 }
 
 $("#name").click(function() {
-    sortAlphabetical()
+    sortNameAsc()
     printNames()
 })
 
 $("#amount").click(function() {
-    sortAmount()
+    sortAmountAsc()
     printNames()
 })
 
-function sortAlphabetical() {
+function sortNameAsc() {
     names.sort(function(a, b) {
         if (a.name < b.name) return -1
         if (a.name > b.name) return 1
@@ -43,7 +46,7 @@ function sortAlphabetical() {
     })
 }
 
-function sortReverseAlphabetical() {
+function sortNameDesc() {
     names.sort(function(a, b) {
         if (a.name < b.name) return 1
         if (a.name > b.name) return -1
@@ -51,7 +54,7 @@ function sortReverseAlphabetical() {
     })
 }
 
-function sortAmount() {
+function sortAmountAsc() {
     names.sort(function(a, b) {
         if (a.amount < b.amount) return -1
         if (a.amount > b.amount) return 1
@@ -59,7 +62,7 @@ function sortAmount() {
     })
 }
 
-function sortReverseAmount() {
+function sortAmountDesc() {
     names.sort(function(a, b) {
         if (a.amount < b.amount) return 1
         if (a.amount > b.amount) return -1
