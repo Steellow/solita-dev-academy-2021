@@ -8,7 +8,7 @@ $(document).ready(function() {
     $.getJSON('names.json').then(function(data) {
         names = data.names
         printNames()
-        calculateTotal()
+        printTotal()
     })
 });
 
@@ -22,7 +22,7 @@ function printNames() {
     filterNames()
 }
 
-function calculateTotal() {
+function printTotal() {
     let total = 0
     names.forEach(person => {
         total += person.amount
