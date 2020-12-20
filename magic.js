@@ -18,6 +18,8 @@ function printNames() {
     names.forEach(person => {
         $("tbody").append('<tr><td>' + person.name + '</td><td>' + person.amount + '</td></tr>')
     });
+
+    filterNames()
 }
 
 function calculateTotal() {
@@ -89,4 +91,14 @@ function sortAmountDesc() {
     })
 
     sortedWithAmount = false
+}
+
+$("input").on("keyup", filterNames);
+
+function filterNames() {
+    let value = $("input").val().toLowerCase();
+
+    $("tbody tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
 }
