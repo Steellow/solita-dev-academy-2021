@@ -95,6 +95,7 @@ function sortAmountDesc() {
 
 $("input").on("keyup", filterNames);
 
+// This function is also ran every time table is sorted
 function filterNames() {
     let value = $("input").val().toLowerCase();
 
