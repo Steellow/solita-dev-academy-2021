@@ -15,11 +15,9 @@ $(document).ready(function() {
 function printNames() {
     $("tbody").html("")
 
-    names.forEach(person => {
+    filteredNames().forEach(person => {
         $("tbody").append('<tr><td>' + person.name + '</td><td>' + person.amount + '</td></tr>')
     });
-
-    filterNames()
 }
 
 function printTotal() {
@@ -93,13 +91,21 @@ function sortAmountDesc() {
     sortedWithAmount = false
 }
 
-$("input").on("keyup", filterNames);
+$("input").on("keyup", printNames);
 
-// This function is also ran every time table is sorted
-function filterNames() {
-    let value = $("input").val().toLowerCase();
 
-    $("tbody tr").filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
+function filteredNames() {
+    const search = $("input").val().toLowerCase();
+
+    if (search === "") {
+        return names
+    }
+
+    return names.filter(function(person) {
+        if (person.name.toLowerCase().includes(search)) {
+            return true
+        } else {
+            return false
+        }
+    })
 }
