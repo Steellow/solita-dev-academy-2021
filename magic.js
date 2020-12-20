@@ -18,11 +18,13 @@ function printNames() {
     filteredNames().forEach(person => {
         $("tbody").append('<tr><td>' + person.name + '</td><td>' + person.amount + '</td></tr>')
     });
+
+    printTotal()
 }
 
 function printTotal() {
     let total = 0
-    names.forEach(person => {
+    filteredNames().forEach(person => {
         total += person.amount
     });
 
