@@ -17,7 +17,8 @@ th {
 
 thead th:hover {
     background-color: #CA5045;
-    /* Header row works as buttons, so text selection cursor was annoying. https://stackoverflow.com/q/826782 */
+    cursor: pointer;
+    /* Header row works as buttons, so text selection was annoying. https://stackoverflow.com/q/826782 */
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
