@@ -104,10 +104,6 @@ function getFilteredNames() {
     }
 
     return names.filter((person) => {
-        if (person.name.toLowerCase().includes(search)) {
-            return true
-        } else {
-            return false
-        }
+        return person.name.toLowerCase().includes(search)
     })
 }
