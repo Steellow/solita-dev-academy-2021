@@ -37,6 +37,7 @@ $("#amount").click(() => {
 })
 
 $("input").on("keyup", printNames);
+$("input").on("search", printNames);
 
 function printNames() {
     $("tbody").html("")
