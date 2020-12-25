@@ -1,8 +1,8 @@
-var names;
+let names;
 
 // Keeps track whether table should be sorted ascending or descending, when clicking header
-var sortedWithName = false
-var sortedWithAmount = false
+let sortedWithName = false
+let sortedWithAmount = false
 
 $(document).ready(() => {
     $.getJSON('names.json').then((data) => {
