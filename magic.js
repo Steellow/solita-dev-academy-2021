@@ -4,8 +4,8 @@ var names;
 var sortedWithName = false
 var sortedWithAmount = false
 
-$(document).ready(function() {
-    $.getJSON('names.json').then(function(data) {
+$(document).ready(() => {
+    $.getJSON('names.json').then((data) => {
         names = data.names
         printNames()
         printTotal()
@@ -31,7 +31,7 @@ function printTotal() {
     $("#total").html(total)
 }
 
-$("#name").click(function() {
+$("#name").click(() => {
     sortedWithAmount = false
 
     if (sortedWithName) {
@@ -43,7 +43,7 @@ $("#name").click(function() {
     printNames()
 })
 
-$("#amount").click(function() {
+$("#amount").click(() => {
     sortedWithName = false
 
     if (sortedWithAmount) {
@@ -56,7 +56,7 @@ $("#amount").click(function() {
 })
 
 function sortNameAsc() {
-    names.sort(function(a, b) {
+    names.sort((a, b) => {
         if (a.name < b.name) return -1
         if (a.name > b.name) return 1
         return 0
@@ -65,7 +65,7 @@ function sortNameAsc() {
 }
 
 function sortNameDesc() {
-    names.sort(function(a, b) {
+    names.sort((a, b) => {
         if (a.name < b.name) return 1
         if (a.name > b.name) return -1
         return 0
@@ -74,7 +74,7 @@ function sortNameDesc() {
 }
 
 function sortAmountAsc() {
-    names.sort(function(a, b) {
+    names.sort((a, b) => {
         if (a.amount < b.amount) return -1
         if (a.amount > b.amount) return 1
         return 0
@@ -84,7 +84,7 @@ function sortAmountAsc() {
 }
 
 function sortAmountDesc() {
-    names.sort(function(a, b) {
+    names.sort((a, b) => {
         if (a.amount < b.amount) return 1
         if (a.amount > b.amount) return -1
         return 0
@@ -103,7 +103,7 @@ function filteredNames() {
         return names
     }
 
-    return names.filter(function(person) {
+    return names.filter((person) => {
         if (person.name.toLowerCase().includes(search)) {
             return true
         } else {
