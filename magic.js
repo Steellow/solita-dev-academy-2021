@@ -12,25 +12,6 @@ $(document).ready(() => {
     })
 });
 
-function printNames() {
-    $("tbody").html("")
-
-    getFilteredNames().forEach(person => {
-        $("tbody").append('<tr><td>' + person.name + '</td><td>' + person.amount + '</td></tr>')
-    });
-
-    printTotal()
-}
-
-function printTotal() {
-    let total = 0
-    getFilteredNames().forEach(person => {
-        total += person.amount
-    });
-
-    $("#total").html(total)
-}
-
 $("#name").click(() => {
     sortedWithAmount = false
 
@@ -54,6 +35,27 @@ $("#amount").click(() => {
 
     printNames()
 })
+
+$("input").on("keyup", printNames);
+
+function printNames() {
+    $("tbody").html("")
+
+    getFilteredNames().forEach(person => {
+        $("tbody").append('<tr><td>' + person.name + '</td><td>' + person.amount + '</td></tr>')
+    });
+
+    printTotal()
+}
+
+function printTotal() {
+    let total = 0
+    getFilteredNames().forEach(person => {
+        total += person.amount
+    });
+
+    $("#total").html(total)
+}
 
 function sortNameAsc() {
     names.sort((a, b) => {
@@ -92,9 +94,6 @@ function sortAmountDesc() {
 
     sortedWithAmount = false
 }
-
-$("input").on("keyup", printNames);
-
 
 function getFilteredNames() {
     const search = $("input").val().toLowerCase();
