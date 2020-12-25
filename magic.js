@@ -42,7 +42,7 @@ function printNames() {
     $("tbody").html("")
 
     getFilteredNames().forEach(person => {
-        $("tbody").append('<tr><td>' + person.name + '</td><td>' + person.amount + '</td></tr>')
+        $("tbody").append('<tr><td>' + person.name + '</td><td>' + person.amount + '</td></tr>') //! Potential XSS vulnerability
     });
 
     printTotal()
@@ -54,7 +54,7 @@ function printTotal() {
         total += person.amount
     });
 
-    $("#total").html(total)
+    $("#total").text(total)
 }
 
 function sortNameAsc() {
