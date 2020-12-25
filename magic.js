@@ -7,6 +7,7 @@ let sortedWithAmount = false
 $(document).ready(() => {
     $.getJSON('names.json').then((data) => {
         names = data.names
+        sortAmountDesc()
         printNames()
         printTotal()
     })
