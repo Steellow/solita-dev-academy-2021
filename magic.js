@@ -59,27 +59,23 @@ function printTotal() {
 
 function sortNameAsc() {
     names.sort((a, b) => {
-        if (a.name < b.name) return -1
-        if (a.name > b.name) return 1
-        return 0
+        return a.name.localeCompare(b.name)
     })
     sortedWithName = true
 }
 
 function sortNameDesc() {
     names.sort((a, b) => {
-        if (a.name < b.name) return 1
-        if (a.name > b.name) return -1
-        return 0
+        return b.name.localeCompare(a.name)
     })
     sortedWithName = false
 }
 
+
 function sortAmountAsc() {
+    // For future-me wondering how this works, read this: https://mdn.io/array-prototype-sort
     names.sort((a, b) => {
-        if (a.amount < b.amount) return -1
-        if (a.amount > b.amount) return 1
-        return 0
+        return a.amount - b.amount
     })
 
     sortedWithAmount = true
@@ -87,9 +83,7 @@ function sortAmountAsc() {
 
 function sortAmountDesc() {
     names.sort((a, b) => {
-        if (a.amount < b.amount) return 1
-        if (a.amount > b.amount) return -1
-        return 0
+        return b.amount - a.amount
     })
 
     sortedWithAmount = false
