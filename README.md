@@ -6,4 +6,4 @@ Made with HTML/CSS, JavaScript and jQuery. Live demo at [hanki.dev/solita-dev-ac
 
 ## Assignment
 
-This excercise was made in order to apply for Solitas Dev Academy. You can see the assagnment [here](https://github.com/solita/dev-academy-2021). 
+This excercise was made in order to apply for Solita's Dev Academy. You can see the assignment [here](https://github.com/solita/dev-academy-2021). 
