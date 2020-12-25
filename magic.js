@@ -15,7 +15,7 @@ $(document).ready(() => {
 function printNames() {
     $("tbody").html("")
 
-    filteredNames().forEach(person => {
+    getFilteredNames().forEach(person => {
         $("tbody").append('<tr><td>' + person.name + '</td><td>' + person.amount + '</td></tr>')
     });
 
@@ -24,7 +24,7 @@ function printNames() {
 
 function printTotal() {
     let total = 0
-    filteredNames().forEach(person => {
+    getFilteredNames().forEach(person => {
         total += person.amount
     });
 
@@ -96,7 +96,7 @@ function sortAmountDesc() {
 $("input").on("keyup", printNames);
 
 
-function filteredNames() {
+function getFilteredNames() {
     const search = $("input").val().toLowerCase();
 
     if (search === "") {
