@@ -37,8 +37,7 @@ $("#amount").click(() => {
     printNames()
 })
 
-$("input").on("keyup", printNames);
-$("input").on("search", printNames);
+$("input").on("input", printNames)
 
 function printNames() {
     let tbody = $("tbody")
