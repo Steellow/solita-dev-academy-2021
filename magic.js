@@ -44,7 +44,13 @@ function printNames() {
     $("tbody").html("")
 
     getFilteredNames().forEach(person => {
-        $("tbody").append('<tr><td>' + person.name + '</td><td>' + person.amount + '</td></tr>') //! Potential XSS vulnerability
+        // Using such a complicated way to avoid XSS vulnerability
+        let tableRow = $("<tr></tr>")
+        let nameCell = $("<td></td>").text(person.name)
+        let amountCell = $("<td></td>").text(person.amount)
+        tableRow.append(nameCell)
+        tableRow.append(amountCell)
+        $("tbody").append(tableRow)
     });
 
     printTotal()
