@@ -41,7 +41,8 @@ $("input").on("keyup", printNames);
 $("input").on("search", printNames);
 
 function printNames() {
-    $("tbody").html("")
+    let tbody = $("tbody")
+    tbody.html("")
 
     getFilteredNames().forEach(person => {
         // Using such a complicated way to avoid XSS vulnerability
@@ -50,7 +51,7 @@ function printNames() {
         let amountCell = $("<td></td>").text(person.amount)
         tableRow.append(nameCell)
         tableRow.append(amountCell)
-        $("tbody").append(tableRow)
+        tbody.append(tableRow)
     });
 
     printTotal()
