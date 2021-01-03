@@ -9,7 +9,6 @@ $(document).ready(() => {
         names = data.names
         sortAmountDesc()
         printNames()
-        printTotal()
     })
 });
 
