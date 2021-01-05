@@ -12,6 +12,7 @@ body {
 table {
     margin-left: auto;
     margin-right: auto;
+    width: 250px;
 }
 
 td,
@@ -53,6 +54,7 @@ th:last-child {
 input {
     padding: 0.5em;
     margin: 0.5em;
+    width: 250px;
 }
 
 input:focus {
