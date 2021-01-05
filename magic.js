@@ -12,6 +12,8 @@ $(document).ready(() => {
     })
 });
 
+$("input").on("input", printNames)
+
 $("#name").click(() => {
     sortedWithAmount = false
 
@@ -35,8 +37,6 @@ $("#amount").click(() => {
 
     printNames()
 })
-
-$("input").on("input", printNames)
 
 function printNames() {
     let tbody = $("tbody")
