@@ -43,7 +43,9 @@ function printNames() {
     tbody.html("")
 
     getFilteredNames().forEach(person => {
-        // Using such a complicated way to avoid XSS vulnerability
+        // Using such a complicated way
+        // instead of just `tbody.append("<tr>...</tr>")`
+        // to avoid XSS vulnerability
         let tableRow = $("<tr></tr>")
         let nameCell = $("<td></td>").text(person.name)
         let amountCell = $("<td></td>").text(person.amount)
