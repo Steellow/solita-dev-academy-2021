@@ -55,10 +55,9 @@ input {
     margin: 0.5em;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+input:focus {
     outline: none;
+    background-color: #f7e5e370;
 }
 
 
