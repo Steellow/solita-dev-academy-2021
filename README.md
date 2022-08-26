@@ -1,6 +1,6 @@
 # Solita Dev Academy 2021 excercise
 
-Made with HTML/CSS, JavaScript and jQuery. Live demo at [hanki.dev/solita-dev-academy-2021](https://hanki.dev/solita-dev-academy-2021)
+Made with HTML/CSS, JavaScript and jQuery. Live demo at [git.hanki.dev/solita-dev-academy-2021](https://git.hanki.dev/solita-dev-academy-2021)
 
 ## Assignment
 
